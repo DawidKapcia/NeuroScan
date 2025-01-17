@@ -9,3 +9,4 @@ drf-yasg
 sqlparse
 psycopg2-binary
 python-dotenv
+Pillow
