@@ -2,6 +2,8 @@ env
 __pycache__
 db.sqlite3
 migrations
+data
+others
 
 # Logs
 logs

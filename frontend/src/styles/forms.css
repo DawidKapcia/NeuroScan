@@ -35,6 +35,7 @@
     width: 35%;
     margin-top: 2vh;
     margin-bottom: 1vh;
+    cursor: pointer;
 }
 
 .start-container > .footer {
