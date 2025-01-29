@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Home from "./pages/Home"
+import Contact from "./pages/Contact"
+import AddCase from "./pages/AddCase"
 import Start from "./pages/Start"
 import NotFound from "./pages/NotFound"
 import ProtectedRoute from './components/ProtectedRoute'
@@ -29,6 +31,16 @@ function App() {
         <Route
           path="/"
           element={<ProtectedRoute><Home /></ProtectedRoute>}
+        ></Route>
+
+        <Route
+          path="/contact"
+          element={<ProtectedRoute><Contact /></ProtectedRoute>}
+        ></Route>
+
+        <Route
+          path="/addcase"
+          element={<ProtectedRoute><AddCase /></ProtectedRoute>}
         ></Route>
 
         <Route

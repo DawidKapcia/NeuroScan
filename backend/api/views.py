@@ -11,6 +11,14 @@ class CreateUserView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [AllowAny,]
 
+class UserDetailView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated,]
+
+    def get_object(self):
+        return self.request.user
+
 class CreateMRICaseList(generics.CreateAPIView):
     
     queryset = MRICase.objects.all()
@@ -29,6 +37,15 @@ class CreateMRICaseList(generics.CreateAPIView):
 
 class DeleteMRICase(generics.DestroyAPIView):
 
+    serializer_class = MRICaseSerializer
+    permission_classes = [IsAuthenticated,]
+
+    def get_queryset(self):
+        user = self.request.user
+        return MRICase.objects.filter(radiologist=user)
+    
+class MRICaseDetailView(generics.RetrieveAPIView):
+    queryset = MRICase.objects.all()
     serializer_class = MRICaseSerializer
     permission_classes = [IsAuthenticated,]
 

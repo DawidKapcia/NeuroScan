@@ -11,7 +11,7 @@ function Start() {
     <div className="flex-center start-background">
         <div className="start-container">
 
-            <img className="logo" src={logo} alt="Logo" onClick={() => handleRoute('/start')}></img>
+            <img className="logo" src={logo} alt="Logo" onClick={() => navigate('/start')}></img>
             <h3 className="default-font">AI-Powered Radiology System</h3>
             
             <form className="flex-center">

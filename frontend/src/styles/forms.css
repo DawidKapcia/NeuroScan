@@ -7,6 +7,10 @@
     font-size: 4vw
 }
 
+form > .error-message {
+    font-size: 18px;
+}
+
 .start-background {
     height: 100vh;
     width: 100vw;
@@ -86,6 +90,8 @@
     letter-spacing: 0.72px;
 }
 
+
+
 form > .no-valid {
     border: 1px solid red;
 }
@@ -110,9 +116,9 @@ form > .no-valid {
     }
 
     .start-container button, .start-container input {
-        height: 100px;
+        height: 40px;
         width: 70vw;
-        font-size: 40px;
+        font-size: 15px;
     }
 
     .start-container button {
@@ -124,15 +130,15 @@ form > .no-valid {
     }
 
     .start-container h3 {
-        font-size: 50px;                         
+        font-size: 20px;                         
     }
 
     .start-container p {
-        font-size: 40px;
+        font-size: 15px;
     }
 
-    input::placeholder {
-        font-size: 32px;
+    .start-container input::placeholder {
+        font-size: 12px;
     }
 
     .password-hidden {
