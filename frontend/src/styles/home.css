@@ -294,6 +294,14 @@ a:hover {
         background-image: url("../assets/add.svg");
     }
 
+    .nav-bar > form > .remove-case-icon {
+        background-image: url("../assets/remove_case.svg");
+    }
+
+    .nav-bar > form > .remove-user-icon {
+        background-image: url("../assets/remove_user.svg");
+    }
+
     .nav-bar > .default-font {
         font-size: 0px;
     }

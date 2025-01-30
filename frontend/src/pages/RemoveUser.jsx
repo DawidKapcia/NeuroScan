@@ -50,8 +50,8 @@ function RemoveUser() {
                     <button type="submit" className="filled-button default-font home-icon" onClick={() => navigate('/')}>PATIENT LIST</button>
                     <button type="submit" className="filled-button default-font contact-icon" onClick={() => navigate('/contact')}>CONTACT</button>
                     <br></br><br></br>
-                    <button type="submit" className="filled-button default-font admin-icon" onClick={() => navigate('/removecase')}>REMOVE CASE</button>
-                    <button type="submit" className="filled-button default-font manage-users-icon" onClick={() => navigate('/removeuser')}>REMOVE USER</button>
+                    <button type="submit" className="filled-button default-font remove-case-icon" onClick={() => navigate('/removecase')}>REMOVE CASE</button>
+                    <button type="submit" className="filled-button default-font remove-user-icon" onClick={() => navigate('/removeuser')}>REMOVE USER</button>
                     </form>
                 </div>
 
