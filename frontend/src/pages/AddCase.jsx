@@ -115,8 +115,8 @@ function AddCase() {
                         {errorMessage && <p className="warning-box error-message">{errorMessage}</p>}
 
                         <input type="text" name="gender" placeholder="Gender" maxLength="1" value={formData.gender} onChange={handleChange} required />
-                        <input type="date" name="birth_date" placeholder="Date of Birth" value={formData.birth_date} onChange={handleChange} required />
-                        <input type="date" name="scan_date" placeholder="Scan date" value={formData.scan_date} onChange={handleChange} required />
+                        <input type="text" name="birth_date" placeholder="Date of birth" onFocus={(e) => e.target.type = 'date'} onBlur={(e) => e.target.type = 'text'} value={formData.birth_date} onChange={handleChange} required />
+                        <input type="text" name="scan_date" placeholder="Scan date" onFocus={(e) => e.target.type = 'date'} onBlur={(e) => e.target.type = 'text'} value={formData.scan_date} onChange={handleChange} required />
                         <input style={{ border: '0px', boxShadow: 'none' }} type="file" name="scan" onChange={handleChange} required />
                         <br />
                         <button type="submit" className="filled-button default-font last-button">CONFIRM</button>

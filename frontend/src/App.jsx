@@ -11,16 +11,19 @@ import ProtectedRoute from './components/ProtectedRoute'
 
 function Logout() {
   localStorage.clear()
+  sessionStorage.clear()
   return <Navigate to="/start" />
 }
 
 function RegisterAndLogout() {
   localStorage.clear()
+  sessionStorage.clear()
   return <Register />
 }
 
 function LoginAndLogout() {
   localStorage.clear()
+  sessionStorage.clear()
   return <Login />
 }
 
