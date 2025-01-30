@@ -5,6 +5,7 @@ import Register from "./pages/Register"
 import Home from "./pages/Home"
 import Contact from "./pages/Contact"
 import AddCase from "./pages/AddCase"
+import CaseDetails from "./pages/CaseDetails"
 import Start from "./pages/Start"
 import NotFound from "./pages/NotFound"
 import ProtectedRoute from './components/ProtectedRoute'
@@ -44,6 +45,11 @@ function App() {
         <Route
           path="/addcase"
           element={<ProtectedRoute><AddCase /></ProtectedRoute>}
+        ></Route>
+
+        <Route
+          path="/casedetails"
+          element={<ProtectedRoute><CaseDetails /></ProtectedRoute>}
         ></Route>
 
         <Route

@@ -10,27 +10,7 @@ import { useNavigate } from 'react-router-dom';
 function AddCase() {
 
     const navigate = useNavigate();
-    const [userData, setUserData] = useState(() => {
-        const savedUserData = sessionStorage.getItem('userData');
-        return savedUserData ? JSON.parse(savedUserData) : null;
-    });
-
-    useEffect(() => {
-        if (!userData) {
-            const fetchUserData = async () => {
-                try {
-                    const response = await api.get('api/user/');
-                    const data = response.data;
-                    setUserData(data);
-                    sessionStorage.setItem('userData', JSON.stringify(data));
-                } catch (error) {
-                    console.error('Error fetching user data:', error);
-                }
-            };
-
-            fetchUserData();
-        }
-    }, [userData]);
+    const userData = JSON.parse(sessionStorage.getItem('userData'));
 
     const [formData, setFormData] = useState({
         gender: '',

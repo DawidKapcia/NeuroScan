@@ -22,4 +22,4 @@ class MRICaseSerializer(serializers.ModelSerializer):
     class Meta:
         model = MRICase
         fields = ['id', 'gender', 'birth_date', 'scan_date', 'risk', 'decision', 'radiologist', 'scan']
-        extra_kwargs = {'risk': {'read_only': True}, 'decision': {'read_only': True}, 'radiologist': {'read_only': True}}
+        extra_kwargs = {'radiologist': {'read_only': True}}

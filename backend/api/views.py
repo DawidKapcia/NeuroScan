@@ -60,3 +60,17 @@ class MRICaseDetailView(generics.RetrieveAPIView):
     def get_queryset(self):
         user = self.request.user
         return MRICase.objects.filter(radiologist=user)
+    
+class UpdateCaseView(generics.UpdateAPIView):
+    serializer_class = MRICaseSerializer
+    permission_classes = [IsAuthenticated,]
+
+    def get_queryset(self):
+        user = self.request.user
+        return MRICase.objects.filter(radiologist=user)
+
+    def perform_update(self, serializer):
+        if serializer.is_valid():
+            serializer.save()
+        else:
+            print(serializer.errors)

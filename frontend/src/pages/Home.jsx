@@ -55,7 +55,7 @@ function Home() {
 
     <div className="lower-container">
     <div className="flex-left-center nav-bar">
-      <img className="profile-photo" src={profle} alt="Profile"/>
+      <img className="profile-photo" src={profle} alt="</div>Profile"/>
       <h3 className="default-font bold">{userData ? `${userData.first_name} ${userData.last_name}` : 'Loading...'}</h3>
 
       <form className="flex-center">

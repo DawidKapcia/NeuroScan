@@ -1,0 +1,75 @@
+.flex-overlow {
+    height: calc(90vh - 2px);
+    width: calc(85vw - 2px);
+
+    overflow: auto;
+}
+
+.flex-details {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-top: 20px;
+}
+
+.scan-image {
+    border: 2px solid #26A9E1;
+    padding: 2px;
+
+    width: 250px;
+    height: 250px;
+}
+
+.flex-details > button {
+    height: 35px;
+    width: 9vw;
+    
+    margin: 1vh;
+
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 8px;
+    border: 0px;
+
+    font-weight: 600;
+    overflow-wrap: break-word;
+
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+.button-green {
+    background-color: #53B859;
+    color: white;
+}
+
+.button-green:hover {
+    background-color: #4aa050;
+}
+
+.button-red {
+    background-color: #E12626;
+    color: white;
+}
+
+.button-red:hover {
+    background-color: #ca2323;
+}
+
+@media screen and (max-device-width: 480px){
+
+    .scan-image {
+        border: 2px solid #26A9E1;
+        padding: 2px;
+    
+        width: 100px;
+        height: 100px;
+    }    
+
+    .flex-details > button {
+        height: 40px;
+        width: 35vw;
+        font-size: 15px;
+        border-radius: 15px;
+        margin: 0.1vw;
+    }
+}

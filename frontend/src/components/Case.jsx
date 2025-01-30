@@ -5,7 +5,7 @@ function Case({ caseData }) {
     const navigate = useNavigate();
 
     const handleRowClick = () => {
-        navigate(`/mricases/${caseData.id}`);
+        navigate(`/casedetails`, { state: { caseData } });
     };
 
     return (
