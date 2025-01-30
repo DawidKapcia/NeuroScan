@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import api from '../api';
 import '../styles/styles.css';
 import '../styles/home.css';
@@ -16,8 +16,8 @@ function AddCase() {
         gender: '',
         birth_date: '',
         scan_date: '',
-        risk: null,
-        decision: null,
+        risk: '',
+        decision: '',
         scan: null
     });
 
@@ -45,6 +45,10 @@ function AddCase() {
             return;
         }
 
+        if (errorMessage) {
+            return;
+        }
+
         const data = new FormData();
         data.append('gender', formData.gender);
         data.append('birth_date', formData.birth_date);
@@ -54,9 +58,13 @@ function AddCase() {
         data.append('scan', formData.scan);
         data.append('radiologist', userData.id);
 
-        if (errorMessage) {
-            return;
-        }
+        console.log({
+            gender: formData.gender,
+            birth_date: formData.birth_date,
+            scan_date: formData.scan_date,
+            risk: formData.risk,
+            decision: formData.decision
+        });
 
         try {
             await api.post("/api/mricases/", data, {
@@ -94,7 +102,7 @@ function AddCase() {
                 </div>
 
                 <div className="cases-container flex-center">
-                    <form className="flex-center" onSubmit={handleSubmit} encType="multipart/form-data">
+                    <form className="flex-center" method="POST" onSubmit={handleSubmit} encType="multipart/form-data">
                         {errorMessage && <p className="warning-box error-message">{errorMessage}</p>}
 
                         <input type="text" name="gender" placeholder="Gender" maxLength="1" value={formData.gender} onChange={handleChange} required />
