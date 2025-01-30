@@ -2,10 +2,9 @@ from rest_framework import generics
 from .serializers import UserSerializer, MRICaseSerializer
 from .models import MRICase
 from django.contrib.auth.models import User
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
 
 class CreateUserView(generics.CreateAPIView):
-    
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny,]
@@ -18,8 +17,16 @@ class UserDetailView(generics.RetrieveAPIView):
     def get_object(self):
         return self.request.user
 
+class DeleteUserView(generics.DestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAdminUser,]
+
+    def get_object(self):
+        username = self.kwargs.get('username')
+        return User.objects.get(username=username)
+
 class CreateMRICaseList(generics.CreateAPIView):
-    
     queryset = MRICase.objects.all()
     serializer_class = MRICaseSerializer
     permission_classes = [IsAuthenticated,]
@@ -43,16 +50,13 @@ class ListMRICasesView(generics.ListAPIView):
         return MRICase.objects.filter(radiologist=user)
 
 class DeleteMRICase(generics.DestroyAPIView):
-
     serializer_class = MRICaseSerializer
-    permission_classes = [IsAuthenticated,]
+    permission_classes = [IsAdminUser,]
 
     def get_queryset(self):
-        user = self.request.user
-        return MRICase.objects.filter(radiologist=user)
+        return MRICase.objects.all()
     
 class MRICaseDetailView(generics.RetrieveAPIView):
-    
     queryset = MRICase.objects.all()
     serializer_class = MRICaseSerializer
     permission_classes = [IsAuthenticated,]

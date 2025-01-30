@@ -6,6 +6,8 @@ import Home from "./pages/Home"
 import Contact from "./pages/Contact"
 import AddCase from "./pages/AddCase"
 import CaseDetails from "./pages/CaseDetails"
+import RemoveCase from "./pages/RemoveCase"
+import RemoveUser from "./pages/RemoveUser"
 import Start from "./pages/Start"
 import NotFound from "./pages/NotFound"
 import ProtectedRoute from './components/ProtectedRoute'
@@ -50,6 +52,16 @@ function App() {
         <Route
           path="/casedetails"
           element={<ProtectedRoute><CaseDetails /></ProtectedRoute>}
+        ></Route>
+
+        <Route
+          path="/removecase"
+          element={<ProtectedRoute><RemoveCase /></ProtectedRoute>}
+        ></Route>
+
+        <Route
+          path="/removeuser"
+          element={<ProtectedRoute><RemoveUser /></ProtectedRoute>}
         ></Route>
 
         <Route

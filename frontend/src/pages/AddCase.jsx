@@ -84,9 +84,12 @@ function AddCase() {
                     <h3 className="default-font bold">{userData ? `${userData.first_name} ${userData.last_name}` : 'Loading...'}</h3>
 
                     <form className="flex-center">
-                        <button type="submit" className="filled-button default-font add-case-icon" onClick={() => navigate('/addcase')}>ADD CASE</button>
-                        <button type="submit" className="filled-button default-font home-icon" onClick={() => navigate('/')}>PATIENT LIST</button>
-                        <button type="submit" className="filled-button default-font contact-icon" onClick={() => navigate('/contact')}>CONTACT</button>
+                    <button type="submit" className="filled-button default-font add-case-icon" onClick={() => navigate('/addcase')}>ADD CASE</button>
+                    <button type="submit" className="filled-button default-font home-icon" onClick={() => navigate('/')}>PATIENT LIST</button>
+                    <button type="submit" className="filled-button default-font contact-icon" onClick={() => navigate('/contact')}>CONTACT</button>
+                    <br></br><br></br>
+                    <button type="submit" className="filled-button default-font admin-icon" onClick={() => navigate('/removecase')}>REMOVE CASE</button>
+                    <button type="submit" className="filled-button default-font manage-users-icon" onClick={() => navigate('/removeuser')}>REMOVE USER</button>
                     </form>
                 </div>
 

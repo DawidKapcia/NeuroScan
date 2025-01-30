@@ -48,44 +48,47 @@ function Home() {
   return (
   <div className="base-container">
     <div className="flex-row-left-center header">
-    <img className="logo" src={logo} alt="Logo" />
-    <input placeholder="Search for a patient..." />
-    <a href="logout"><button type="submit" className="logout"></button></a>
+      <img className="logo" src={logo} alt="Logo" />
+      <input placeholder="Search for a patient..." />
+      <a href="logout"><button type="submit" className="logout"></button></a>
     </div>
 
     <div className="lower-container">
-    <div className="flex-left-center nav-bar">
-      <img className="profile-photo" src={profle} alt="</div>Profile"/>
-      <h3 className="default-font bold">{userData ? `${userData.first_name} ${userData.last_name}` : 'Loading...'}</h3>
+      <div className="flex-left-center nav-bar">
+        <img className="profile-photo" src={profle} alt="Profile" />
+        <h3 className="default-font bold">{userData ? `${userData.first_name} ${userData.last_name}` : 'Loading...'}</h3>
 
-      <form className="flex-center">
-      <button type="submit" className="filled-button default-font add-case-icon" onClick={() => navigate('/addcase')}>ADD CASE</button>
-      <button type="submit" className="filled-button default-font home-icon" onClick={() => navigate('/')}>PATIENT LIST</button>
-      <button type="submit" className="filled-button default-font contact-icon" onClick={() => navigate('/contact')}>CONTACT</button>
-      </form>
-    </div>
-
-    <div className="cases-container">
-      <div className="cases">
-        <table className="cases-table">
-          <thead>
-          <tr>
-            <th>ID</th>
-            <th>Gender</th>
-            <th>DOB</th>
-            <th>Scan date</th>
-            <th>Risk</th>
-            <th>Decision</th>
-          </tr>
-          </thead>
-          <tbody>
-          {cases.map((caseData) => (
-            <Case caseData={caseData} />
-          ))}
-          </tbody>
-        </table>
+        <form className="flex-center">
+          <button type="submit" className="filled-button default-font add-case-icon" onClick={() => navigate('/addcase')}>ADD CASE</button>
+          <button type="submit" className="filled-button default-font home-icon" onClick={() => navigate('/')}>PATIENT LIST</button>
+          <button type="submit" className="filled-button default-font contact-icon" onClick={() => navigate('/contact')}>CONTACT</button>
+          <br></br><br></br>
+          <button type="submit" className="filled-button default-font admin-icon" onClick={() => navigate('/removecase')}>REMOVE CASE</button>
+          <button type="submit" className="filled-button default-font manage-users-icon" onClick={() => navigate('/removeuser')}>REMOVE USER</button>
+        </form>
       </div>
-    </div>
+
+      <div className="cases-container">
+        <div className="cases">
+          <table className="cases-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Gender</th>
+                <th>DOB</th>
+                <th>Scan date</th>
+                <th>Risk</th>
+                <th>Decision</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cases.map((caseData) => (
+                <Case key={caseData.id} caseData={caseData} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
   );
